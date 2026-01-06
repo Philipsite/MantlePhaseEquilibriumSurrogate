@@ -1,0 +1,10 @@
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.3"
+manifest_format = "2.0"
+project_hash = "429f170003cc62300ef483080e08308db13b7a12"
+
+[[deps.MantlePhaseEquilibriumSurrogate]]
+path = "."
+uuid = "b98920b2-e97c-4a6d-8ccc-df88d4297f53"
+version = "0.1.0-dev"

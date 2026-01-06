@@ -1,0 +1,7 @@
+name = "MantlePhaseEquilibriumSurrogate"
+uuid = "b98920b2-e97c-4a6d-8ccc-df88d4297f53"
+authors = ["Philip Hartmeier <philip.hartmeier@unil.ch>", "Pierre Lanari <pierre.lanari@unil.ch>"]
+version = "0.1.0-dev"
+
+[compat]
+julia = "1.12"
