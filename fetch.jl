@@ -52,3 +52,13 @@ if !isdir(joinpath(data_dir, "generated_dataset"))
     url = "https://zenodo.org/records/18154882/files/generated_data.tar.gz"
     fetch_and_extract(url, data_dir)
 end
+
+# This part is commented out, as it is not recommended to re-download the HPT results every time.
+# Attention, these results are very large (~10s of GB)!
+# #\\TODO - CHECK IF ZENODO LINK IS CORRECT AFTER FINALISING ZENODO REPO
+# if !isdir(joinpath(data_dir, "hpt_results"))
+#     url = "https://zenodo.org/records/18154882/files/hpt_results.tar.gz"
+#     fetch_and_extract(url, data_dir)
+# end
+
+#\\TODO - ADD MODEL DOWNLOAD
