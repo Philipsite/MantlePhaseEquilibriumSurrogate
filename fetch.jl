@@ -43,15 +43,19 @@ models_dir = joinpath(@__DIR__, "models")
 if !isdir(data_dir)
     mkpath(data_dir)
 end
-if !isdir(models_dir)
-    mkpath(models_dir)
-end
 
 #\\TODO - CHECK IF ZENODO LINK IS CORRECT AFTER FINALISING ZENODO REPO
 if !isdir(joinpath(data_dir, "generated_dataset"))
     url = "https://zenodo.org/records/18154882/files/generated_data.tar.gz"
     fetch_and_extract(url, data_dir)
 end
+
+#\\TODO - CHECK IF ZENODO LINK IS CORRECT AFTER FINALISING ZENODO REPO
+if !isdir(models_dir)
+    url = "https://zenodo.org/records/18154882/files/models.tar.gz"
+    fetch_and_extract(url, models_dir)
+end
+
 
 # This part is commented out, as it is not recommended to re-download the HPT results every time.
 # Attention, these results are very large (~10s of GB)!
@@ -60,5 +64,3 @@ end
 #     url = "https://zenodo.org/records/18154882/files/hpt_results.tar.gz"
 #     fetch_and_extract(url, data_dir)
 # end
-
-#\\TODO - ADD MODEL DOWNLOAD
