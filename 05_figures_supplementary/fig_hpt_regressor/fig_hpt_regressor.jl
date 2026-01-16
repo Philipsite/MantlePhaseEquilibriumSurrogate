@@ -46,7 +46,7 @@ const EXPERIMENT_DIRS = [
     # Backbone fraction = 2/3, batch sizes 1, 2, 3
     joinpath(HPT_RESULTS_DIR, "hyperparam_tuningcBack_fbl2_bs1_2026Jan12_1827"),
     joinpath(HPT_RESULTS_DIR, "hyperparam_tuningcBack_fbl2_bs2_2026Jan13_1757"),
-    joinpath(HPT_RESULTS_DIR, "hyperparam_tuningcBack_fbl2_bs2_2026Jan13_1757"), #FIXME - duplicate as placeholder; update when available
+    joinpath(HPT_RESULTS_DIR, "hyperparam_tuningcBack_fbl2_bs3_2026Jan14_1505"),
 ]
 
 # Experiment metadata (aligned with EXPERIMENT_DIRS)
