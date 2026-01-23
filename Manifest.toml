@@ -2,7 +2,7 @@
 
 julia_version = "1.12.3"
 manifest_format = "2.0"
-project_hash = "88681cc52193d8bfec0c97382f11a89741fe746d"
+project_hash = "1ac75c54cb15997d7dd2d26d5e58b891b0d1392d"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -238,9 +238,9 @@ version = "0.3.1+1"
 
 [[deps.CUDA_Driver_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "63b4911c80ade9de10ec4b766e99cb1a628f465f"
+git-tree-sha1 = "23bf4e60006b78544f753880fbcf1aa158a7669c"
 uuid = "4ee394cb-3365-5eb0-8335-949819d2adfc"
-version = "13.1.0+0"
+version = "13.1.0+2"
 
 [[deps.CUDA_Runtime_Discovery]]
 deps = ["Libdl"]
@@ -718,9 +718,9 @@ version = "1.11.0"
 
 [[deps.GPUArrays]]
 deps = ["Adapt", "GPUArraysCore", "KernelAbstractions", "LLVM", "LinearAlgebra", "Printf", "Random", "Reexport", "ScopedValues", "Serialization", "SparseArrays", "Statistics"]
-git-tree-sha1 = "899fc3b90a75c4252367b7d0a4e4f5031e9453f2"
+git-tree-sha1 = "4afe2c81e0160a7190c24361defc8c28f3616bac"
 uuid = "0c68f7d7-f131-5f86-a1c3-88cf8149b2d7"
-version = "11.3.3"
+version = "11.3.4"
 weakdeps = ["JLD2"]
 
     [deps.GPUArrays.extensions]
@@ -734,9 +734,9 @@ version = "0.2.0"
 
 [[deps.GPUCompiler]]
 deps = ["ExprTools", "InteractiveUtils", "LLVM", "Libdl", "Logging", "PrecompileTools", "Preferences", "Scratch", "Serialization", "TOML", "Tracy", "UUIDs"]
-git-tree-sha1 = "6e5a25bc455da8e8d88b6b7377e341e9af1929f0"
+git-tree-sha1 = "9c83131d543f8275059baecbf98f8af43bd44783"
 uuid = "61eb1bfa-7361-4325-ad38-22787b887f55"
-version = "1.7.5"
+version = "1.7.6"
 
 [[deps.GPUToolbox]]
 deps = ["LLVM"]
@@ -1427,10 +1427,14 @@ version = "0.9.32"
     cuDNN = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"
 
 [[deps.NVTX]]
-deps = ["Colors", "JuliaNVTXCallbacks_jll", "Libdl", "NVTX_jll"]
-git-tree-sha1 = "ce127015d2005e468dd8715e2daca6843b0dedd8"
+deps = ["JuliaNVTXCallbacks_jll", "Libdl", "NVTX_jll"]
+git-tree-sha1 = "a9083c3e469e63cca454d1fc3b19472d9d92c14a"
 uuid = "5da4648a-3479-48b8-97b9-01cb529c0a1f"
-version = "1.0.2"
+version = "1.0.3"
+weakdeps = ["Colors"]
+
+    [deps.NVTX.extensions]
+    NVTXColorsExt = "Colors"
 
 [[deps.NVTX_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -1920,11 +1924,11 @@ version = "0.1.15"
 
 [[deps.Sprout]]
 deps = ["BenchmarkTools", "CSV", "CUDA", "CairoMakie", "ChainRulesCore", "DataFrames", "Dates", "Distributions", "Flux", "JLD2", "MAGEMin_C", "ParameterSchedulers", "ProgressBars", "Random", "Reexport", "Statistics", "cuDNN"]
-git-tree-sha1 = "d635af025adcfd9893bfbd5823cc6ba0fd4be618"
+git-tree-sha1 = "39bd546ebd0f5640d62964d30200754c770495ee"
 repo-rev = "main"
 repo-url = "/Users/philip/Research/PhDProjectUNIL/0X1_SurrogateGEM/01_SB21/Sprout.jl"
 uuid = "0e921d4c-edff-46ec-ae31-e277f0125084"
-version = "0.2.1"
+version = "0.2.6"
 
 [[deps.StableRNGs]]
 deps = ["Random"]
