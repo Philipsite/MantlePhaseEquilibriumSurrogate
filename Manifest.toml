@@ -1954,9 +1954,9 @@ version = "0.1.15"
 
 [[deps.Sprout]]
 deps = ["BenchmarkTools", "CSV", "CUDA", "CairoMakie", "ChainRulesCore", "DataFrames", "Dates", "Distributions", "Flux", "Hwloc", "JLD2", "MAGEMin_C", "ParameterSchedulers", "ProgressBars", "Random", "Reexport", "Statistics", "cuDNN"]
-git-tree-sha1 = "56933c246f95931ea528d0b6d31d8f243ade5703"
-repo-rev = "main"
-repo-url = "/Users/philip/Research/PhDProjectUNIL/0X1_SurrogateGEM/01_SB21/Sprout.jl"
+git-tree-sha1 = "1c1d7ff494674372f0c45f986fd663084384c70a"
+repo-rev = "dev-v3.1"
+repo-url = "https://github.com/Philipsite/Sprout.jl.git"
 uuid = "0e921d4c-edff-46ec-ae31-e277f0125084"
 version = "0.3.0"
 
