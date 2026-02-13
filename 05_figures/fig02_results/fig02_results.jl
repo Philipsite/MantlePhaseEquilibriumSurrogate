@@ -361,6 +361,6 @@ with_theme(create_figure_theme()) do
     # VIOLIN PLOTS OF ERRORS IN 𝑣 PREDICTIONS
     violin_plots_𝑣(grid_𝑣_error, err_𝑣, rel_err_𝑣, med_ae_𝑣, med_re_𝑣, phase_names)
 
-    save(joinpath("04_figures", "fig02_results", "fig02_results.pdf"), fig)
+    save(joinpath("05_figures", "fig02_results", "fig02_results.pdf"), fig)
     fig
 end

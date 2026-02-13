@@ -98,4 +98,4 @@ text!(ax1, x_Mg(DMM) .- 0.002, ratio_AlSi(DMM), text="DMM Workman & Hart (2005)"
 # text!(ax1, x_Mg(AOC) .+ 0.002, ratio_AlSi(AOC), text="AOC Kelley et al. (2003)", align=(:left, :center), fontsize=8)
 
 fig
-save(joinpath(@__DIR__, "fig01_dataset.pdf"), fig)
+save(joinpath("05_figures", "fig01_results", "fig01_dataset.pdf"), fig)

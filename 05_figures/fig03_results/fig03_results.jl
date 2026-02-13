@@ -254,6 +254,6 @@ with_theme(create_figure_theme()) do
     # VIOLIN PLOTS OF ELEMENT-WISE ERRORS IN GARNET
     plot_elementwise_misfit_in_𝐗(grid_lower_right, el_wise_err_𝐗)
 
-    save(joinpath("04_figures", "fig03_results", "fig03_results.pdf"), fig)
+    save(joinpath("05_figures", "fig03_results", "fig03_results.pdf"), fig)
     fig
 end
