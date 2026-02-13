@@ -29,11 +29,20 @@ function fetch_and_extract(url::String, target_dir::String)
         tmp_archive = joinpath(tmpdir, "archive.tar.gz")
         download(url, tmp_archive)
 
-        println("Extracting to: $target_dir")
+        tmp_extract = joinpath(tmpdir, "extracted")
+        println("Extracting...")
         open(tmp_archive, "r") do io
-            Tar.extract(GzipDecompressorStream(io), target_dir)
+            Tar.extract(GzipDecompressorStream(io), tmp_extract)
         end
-        println("Done!")
+
+        # Move extracted contents to target directory
+        mkpath(target_dir)
+        for item in readdir(tmp_extract)
+            src = joinpath(tmp_extract, item)
+            dst = joinpath(target_dir, item)
+            mv(src, dst; force=true)
+        end
+        println("Done! Extracted to: $target_dir")
     end
 end
 
@@ -45,23 +54,23 @@ if !isdir(data_dir)
 end
 
 if !isdir(joinpath(data_dir, "generated_dataset"))
-    url = "https://zenodo.org/records/18154883/files/generated_data.tar.gz"
+    url = "https://zenodo.org/records/18631853/files/generated_data.tar.gz"
     fetch_and_extract(url, data_dir)
 end
 
-if !isdir(joinpath(data_dir, "ood_datasets"))
-    url = "https://zenodo.org/records/18154883/files/ood_datasets.tar.gz"
+if !isdir(joinpath(data_dir, "ood_dataset"))
+    url = "https://zenodo.org/records/18631853/files/ood_dataset.tar.gz"
     fetch_and_extract(url, data_dir)
 end
 
 if !isdir(models_dir)
-    url = "https://zenodo.org/records/18154883/files/models.tar.gz"
+    url = "https://zenodo.org/records/18631853/files/models.tar.gz"
     fetch_and_extract(url, models_dir)
 end
 
 # This part is commented out, as it is not recommended to re-download the HPT results every time.
 # Attention, these results are very large (~10s of GB)!
 # if !isdir(joinpath(data_dir, "hpt_results"))
-#     url = "https://zenodo.org/records/18154883/files/hpt_results.tar.gz"
+#     url = "https://zenodo.org/records/18631853/files/hpt_results.tar.gz"
 #     fetch_and_extract(url, data_dir)
 # end
