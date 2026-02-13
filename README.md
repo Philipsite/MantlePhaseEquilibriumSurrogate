@@ -30,7 +30,7 @@ This will install all required dependencies as specified in the `Project.toml`  
 
 ## Download Datasets and Trained Models
 
-To run the scripts in this repository, you need to download the generated datasets and trained models from the accompanying [Zenodo repository](https://zenodo.org/records/18154882).
+To run the scripts in this repository, you need to download the generated datasets and trained models from the accompanying [Zenodo repository](https://zenodo.org/records/18154881).
 
 Either download the archives yourself and place them into `data/` and `models/`, or simply run the [fetch.jl](fetch.jl) script from the repository root to do this automatically:
 
