@@ -114,12 +114,12 @@ with_theme(create_figure_theme()) do
 
     for i in 1:14
         text!(ax_left, "$(ss_names[i])",
-          position = (-0.059, -i/5 * 2 + 0.2),
+          position = (-0.049, -i/5 * 2 + 0.2),
           color = colors_phase[i],
           align = (:left, :center),
           fontsize = 10)
         text!(ax_left, "MAE = $(me_no_zeros(𝐗_ŷ[:, i, :], 𝐗_ss[:, i, :], agg= (x -> median(abs.(x)))) |> x -> round(x, digits=3))",
-              position = (0.059, -i/5 * 2 + 0.2),
+              position = (0.049, -i/5 * 2 + 0.2),
               color = colors_phase[i],
               align = (:right, :center),
               fontsize = 10)
@@ -127,7 +127,7 @@ with_theme(create_figure_theme()) do
 
     for el_idx in 1:6
         text!(ax_left, [L"\textrm{SiO_2}"; L"\textrm{CaO}"; L"\textrm{Al_2O_3}"; L"\textrm{FeO}"; L"\textrm{MgO}"; L"\textrm{Na_2O}"][el_idx],
-              position = (-0.045, -0.15-(el_idx*0.4/6)),
+              position = (-0.04, -0.15-(el_idx*0.4/6)),
               color = colors_el[7 - el_idx],
               align = (:left, :center),
               fontsize = 8)
@@ -139,6 +139,7 @@ with_theme(create_figure_theme()) do
     ax_left.xticks = [-0.05, -0.03, -0.01, 0, 0.01, 0.03, 0.05]
     ax_left.xminorticks = -0.06:0.01:0.06
 
+    xlims!(ax_left, -0.055, 0.055)
     ylims!(ax_left, -5.8, 0.0)
 
     # VIOLIN PLOTS OF RELATIVE ERRORS IN 𝐗 PREDICTIONS
@@ -171,6 +172,10 @@ with_theme(create_figure_theme()) do
 
     ylims!(ax_right, -5.8, 0.0)
 
+    # add panel labels
+    Label(fig[1, 1, TopLeft()], "(a)", fontsize = 16, font=:bold, padding=(0, 5, 0, 5), halign=:right)
+    Label(fig[1, 2, TopLeft()], "(b)", fontsize = 16, font=:bold, padding=(0, 5, 0, 5), halign=:right)
+
     fig
-    save(joinpath("05_figures_supplementary", "fig_elementwise_misfit", "fig_elementwise_misfit.pdf"), fig)
+    save(joinpath("05_figures_supplementary", "figS6_elementwise_misfit", "fig_elementwise_misfit.pdf"), fig)
 end
