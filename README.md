@@ -17,7 +17,12 @@ The model is trained on data generated using [MAGEMin](https://github.com/Comput
    cd MantlePhaseEquilibriumSurrogate
    ```
 
-2. Activate and instantiate the project environment:
+2. Start Julia in the repository root (multi-threaded for faster model predictions)
+   ```zsh
+   julia -t auto
+   ```
+
+3. Activate and instantiate the project environment:
    ```julia
    using Pkg
    Pkg.activate(".")
