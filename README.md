@@ -55,7 +55,7 @@ include("fetch.jl")
 - **05 Figures Supplementary**: Scripts for generating supplementary figures.
 
 ---
-
+(created by fetch.jl download script:)
 - **data/**: Contains the generated datasets, hyperparameter tuning results, and out-of-distribution test data.
 - **models/**: Contains the trained phase assemblage classifier and surrogate models.
 
