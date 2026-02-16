@@ -57,9 +57,9 @@ const EXPERIMENT_BATCH_SIZES_FULL = repeat([4096, 25000, 100000, 4096, 25000, 10
 
 # Training setup labels for each panel
 const TRAINING_SETUP_LABELS = [
-    "Pretrained Classifier (Frozen)",
-    "Pretrained Classifier (Adjustable)",
-    "Common Backbone",
+    "(a) Pretrained Classifier (Frozen)",
+    "(b) Pretrained Classifier (Adjustable)",
+    "(c) Common Backbone",
 ]
 
 #= ══════════════════════════════════════════════════════════════════════════════
@@ -206,7 +206,7 @@ function highlight_training_curve!(ax, loss_vec::Vector;
         min_epoch = argmin(loss_vec)
         min_loss = minimum(loss_vec)
         valign = label_position == :top ? :bottom : :top
-        text!(ax, Float32(min_epoch), min_loss;
+        text!(ax, Float32(min_epoch), min_loss -0.003;
               text = "$label $(round(min_loss, digits=4))",
               align = (:center, valign),
               fontsize = 8,
@@ -404,6 +404,7 @@ function create_hpt_regressor_figure()
         Colorbar(grid_d[3, 6:8]; colormap=colormap_mae_𝐗, limits=colorrange_𝐗,
                  label=L"\textrm{Mean Absolute Error 𝐗_{ss} [molmol^{-1}]}", vertical=false)
 
+
         return fig
     end
 end
@@ -516,6 +517,11 @@ function create_learning_curves_figure()
                  ticklabelsvisible = false,
                  vertical = false)
 
+        # # Add panel labels
+        # Label(grid_a[0, 1, TopLeft()], "(a)"; fontsize=16, font=:bold, padding=(0, 0, 0, 0), halign=:right)
+        # Label(grid_b[0, 1, TopLeft()], "(b)"; fontsize=16, font=:bold, padding=(0, 0, 0, 0), halign=:right)
+        # Label(grid_c[0, 1, TopLeft()], "(c)"; fontsize=16, font=:bold, padding=(0, 0, 0, 0), halign=:right)
+
         return fig
     end
 end
@@ -536,7 +542,4 @@ function main()
     return fig_heatmaps, fig_curves
 end
 
-# Only run when script is executed directly (not when included)
-if abspath(PROGRAM_FILE) == @__FILE__
-    main()
-end
+fig_heatmaps, fig_curves = main()

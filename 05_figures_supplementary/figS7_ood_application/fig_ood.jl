@@ -190,8 +190,13 @@ function pie_charts(grid_layout, tp, fp, tn, fn, accuracy_phasewise, recall_phas
             # Add accuracy and recall in center
             text!(ax, 0, 0, text="$(round(Int, accuracy_phasewise[idx]))%",
                   align=(:center, :bottom), fontsize=8)
-            # text!(ax, 0, 0, text="$(round(Int, recall_phasewise[idx]))%",
-            #       align=(:center, :top), fontsize=8)
+            if !isnan(recall_phasewise[idx])
+                text!(ax, 0, 0, text="$(round(Int, recall_phasewise[idx]))%",
+                    align=(:center, :top), fontsize=8)
+            else
+                text!(ax, 0, 0, text="N/A",
+                    align=(:center, :top), fontsize=8)
+            end
         end
     end
 
@@ -380,7 +385,7 @@ with_theme(create_figure_theme()) do
     rowsize!(grid_left, 2, Auto(0.1))  # Legend takes less vertical space
 
     # MINERAL ASSEMBLAGE DIAGRAM
-    heatmap_path = joinpath("05_figures_supplementary", "fig_ood_application", "fig_heatmap.png")
+    heatmap_path = joinpath("05_figures_supplementary", "figS7_ood_application", "fig_heatmap.png")
     mineral_assemblage_diagram(grid_MAD, asm_grid, var_vec_grid, (10., 400.), (500., 2500.);
                                heatmap_path=heatmap_path, heatmap_dpi=HEATMAP_DPI)
 
@@ -395,6 +400,6 @@ with_theme(create_figure_theme()) do
     # VIOLIN PLOTS OF ERRORS IN 𝐗 PREDICTIONS
     violin_plots_𝐗(grid_𝑣_error, err_𝐗, rel_err_𝐗, med_ae_𝐗, med_re_𝐗, ss_names)
 
-    save(joinpath("05_figures_supplementary", "fig_ood_application", "fig_ood.pdf"), fig)
+    save(joinpath("05_figures_supplementary", "figS7_ood_application", "fig_ood.pdf"), fig)
     fig
 end

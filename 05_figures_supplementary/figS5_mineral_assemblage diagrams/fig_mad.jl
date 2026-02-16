@@ -116,4 +116,4 @@ bas_ax = mineral_assemblage_diagram(gb, asm_grid_Bas, var_vec_grid_Bas, P_range_
 bas_ax.title = "Basalt (Xu et al., 2008)"
 
 fig
-save(joinpath("05_figures_supplementary", "fig_mineral_assemblage diagrams","mineral_assemblage_diagrams.pdf"), fig)
+save(joinpath("05_figures_supplementary", "figS5_mineral_assemblage diagrams","mineral_assemblage_diagrams.pdf"), fig)

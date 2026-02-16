@@ -17,7 +17,12 @@ The model is trained on data generated using [MAGEMin](https://github.com/Comput
    cd MantlePhaseEquilibriumSurrogate
    ```
 
-2. Activate and instantiate the project environment:
+2. Start Julia in the repository root (multi-threaded for faster model predictions)
+   ```zsh
+   julia -t auto
+   ```
+
+3. Activate and instantiate the project environment:
    ```julia
    using Pkg
    Pkg.activate(".")
@@ -30,7 +35,7 @@ This will install all required dependencies as specified in the `Project.toml`  
 
 ## Download Datasets and Trained Models
 
-To run the scripts in this repository, you need to download the generated datasets and trained models from the accompanying [Zenodo repository](https://zenodo.org/records/18154882).
+To run the scripts in this repository, you need to download the generated datasets and trained models from the accompanying [Zenodo repository](https://zenodo.org/records/18154881).
 
 Either download the archives yourself and place them into `data/` and `models/`, or simply run the [fetch.jl](fetch.jl) script from the repository root to do this automatically:
 
@@ -55,7 +60,7 @@ include("fetch.jl")
 - **05 Figures Supplementary**: Scripts for generating supplementary figures.
 
 ---
-
+(created by fetch.jl download script:)
 - **data/**: Contains the generated datasets, hyperparameter tuning results, and out-of-distribution test data.
 - **models/**: Contains the trained phase assemblage classifier and surrogate models.
 

@@ -206,14 +206,14 @@ end
 """Highlight a specific model's training curve."""
 function highlight_training_curve!(ax, loss_vec::Vector;
                                     color=:red, linewidth=1.0,
-                                    label=nothing, label_position=:top)
+                                    label=nothing, label_position=:top, y_offset=0.0)
     lines!(ax, loss_vec; color, linewidth)
 
     if !isnothing(label)
         min_epoch = argmin(loss_vec)
         min_loss = minimum(loss_vec)
         valign = label_position == :top ? :top : :bottom
-        text!(ax, Float32(min_epoch), 0.0;
+        text!(ax, Float32(min_epoch), 0.0 + y_offset;
               text = "$label $(round(min_loss, digits=4))",
               align = (:center, valign),
               color)
@@ -301,7 +301,7 @@ function build_panel_b!(grid, loss_curves::Array{Vector{Float64},3};
         ylabel = L"1 - \textrm{Q_{asm}}",
     )
     xlims!(ax_bce, 9, nothing)
-    ylims!(ax_bce, nothing, 0.25)
+    ylims!(ax_bce, -0.05, 0.25)
 
     # BFL training curves (bottom)
     ax_bfl = Axis(grid[2, 1];
@@ -311,7 +311,7 @@ function build_panel_b!(grid, loss_curves::Array{Vector{Float64},3};
         ylabel = L"1 - \textrm{Q_{asm}}",
     )
     xlims!(ax_bfl, 9, nothing)
-    ylims!(ax_bfl, nothing, 0.25)
+    ylims!(ax_bfl, -0.05, 0.25)
 
     # Plot all training curves (BCE: experiments 1-3, BFL: experiments 4-6)
     plot_training_curves!(ax_bce, loss_curves, 1:3, model_size; colormap, colorrange)
@@ -328,12 +328,12 @@ function build_panel_b!(grid, loss_curves::Array{Vector{Float64},3};
 
     # Fast optimal (if in BFL)
     if opt_fast_idx[3] > 3
-        highlight_training_curve!(ax_bfl, loss_curves[opt_fast_idx]; color=:blue,
+        highlight_training_curve!(ax_bfl, loss_curves[opt_fast_idx]; y_offset = -0.045, color=:blue,
                                    label="Minimal loss quick model", label_position=:bottom)
     end
 
     # Fast BCE
-    highlight_training_curve!(ax_bce, loss_curves[opt_fast_bce_idx]; color=:blue,
+    highlight_training_curve!(ax_bce, loss_curves[opt_fast_bce_idx]; y_offset = -0.04, color=:blue,
                                label="Minimal loss quick BCE", label_position=:bottom)
 
     # Colorbar
@@ -426,6 +426,11 @@ function create_hpt_classifier_figure()
         build_panel_c!(grid_c, inf_times;
                        opt_idx, opt_bce_idx, opt_fast_idx, opt_fast_bce_idx)
 
+        # Add panel labels
+        Label(fig[1, 1, TopLeft()], "(a)"; fontsize=16, font=:bold, padding=(0, 0, 0, 0), halign=:right)
+        Label(fig[2, 1, TopLeft()], "(b)"; fontsize=16, font=:bold, padding=(0, 5, 0, 5), halign=:right)
+        Label(fig[2, 3, TopLeft()], "(c)"; fontsize=16, font=:bold, padding=(0, 5, 0, 5), halign=:right)
+
         return fig
     end
 end
@@ -440,7 +445,4 @@ function main()
     return fig
 end
 
-# Only run when script is executed directly (not when included)
-if abspath(PROGRAM_FILE) == @__FILE__
-    main()
-end
+main()
