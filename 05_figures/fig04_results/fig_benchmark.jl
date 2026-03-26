@@ -114,7 +114,7 @@
 
     ylims!(ax2, 1.5*1e-8, nothing)
 
-    Legend(g_legend[1, 1], [[l1, l2], [m1, m2], [s1, s2]],
+    Legend(g_legend[1, 1], [[s1, s2], [l1, l2], [m1, m2]],
         [[L"\mathcal{O}(n)", L"\mathcal{O}(1)"],["MAGEMin", "Surrogate"], ["CPU (12 threads)", "GPU (3'072 cores)"]],
         ["Theoretical complexity", "Method", "Device"];
         framevisible = false, orientation = :horizontal, valign = :top, titlehalign = :left, gridshalign = :left)
