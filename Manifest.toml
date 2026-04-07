@@ -2,7 +2,7 @@
 
 julia_version = "1.12.3"
 manifest_format = "2.0"
-project_hash = "1ac75c54cb15997d7dd2d26d5e58b891b0d1392d"
+project_hash = "b47ab3d602f93f7bb78f25d1f64dc207f0bb716c"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "f7304359109c768cf32dc5fa2d371565bb63b68a"
@@ -224,10 +224,10 @@ uuid = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 version = "0.10.15"
 
 [[deps.CUDA]]
-deps = ["AbstractFFTs", "Adapt", "BFloat16s", "CEnum", "CUDA_Compiler_jll", "CUDA_Driver_jll", "CUDA_Runtime_Discovery", "CUDA_Runtime_jll", "Crayons", "DataFrames", "ExprTools", "GPUArrays", "GPUCompiler", "GPUToolbox", "KernelAbstractions", "LLVM", "LLVMLoopInfo", "LazyArtifacts", "Libdl", "LinearAlgebra", "Logging", "NVTX", "Preferences", "PrettyTables", "Printf", "Random", "Random123", "RandomNumbers", "Reexport", "SparseArrays", "StaticArrays", "Statistics", "demumble_jll"]
-git-tree-sha1 = "3fe1fb600b6ec029697416d5851ef0661c538f20"
+deps = ["AbstractFFTs", "Adapt", "BFloat16s", "CEnum", "CUDA_Compiler_jll", "CUDA_Driver_jll", "CUDA_Runtime_Discovery", "CUDA_Runtime_jll", "Crayons", "ExprTools", "GPUArrays", "GPUCompiler", "GPUToolbox", "KernelAbstractions", "LLVM", "LLVMLoopInfo", "LazyArtifacts", "Libdl", "LinearAlgebra", "Logging", "NVTX", "Preferences", "PrettyTables", "Printf", "Random", "Random123", "RandomNumbers", "Reexport", "SparseArrays", "StaticArrays", "Statistics", "demumble_jll"]
+git-tree-sha1 = "ea6a2ab8307059b6c9ea186ff7dfcd032a13b731"
 uuid = "052768ef-5323-5732-b1bb-66c8b64840ba"
-version = "5.9.6"
+version = "5.11.0"
 
     [deps.CUDA.extensions]
     ChainRulesCoreExt = "ChainRulesCore"
@@ -243,15 +243,15 @@ version = "5.9.6"
 
 [[deps.CUDA_Compiler_jll]]
 deps = ["Artifacts", "CUDA_Driver_jll", "CUDA_Runtime_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
-git-tree-sha1 = "e547b2202721853ec06c6d9a71c87426419ba765"
+git-tree-sha1 = "8c19e97de5b7574672e4a7a3abd55714ad66d59a"
 uuid = "d1e2174e-dfdc-576e-b43e-73b79eb1aca8"
-version = "0.4.1+1"
+version = "0.4.2+0"
 
 [[deps.CUDA_Driver_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "23bf4e60006b78544f753880fbcf1aa158a7669c"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "TOML"]
+git-tree-sha1 = "061f39cc84e99928830aa1005d79f7e99097ba28"
 uuid = "4ee394cb-3365-5eb0-8335-949819d2adfc"
-version = "13.1.0+2"
+version = "13.2.0+0"
 
 [[deps.CUDA_Runtime_Discovery]]
 deps = ["Libdl"]
@@ -261,15 +261,15 @@ version = "1.0.0"
 
 [[deps.CUDA_Runtime_jll]]
 deps = ["Artifacts", "CUDA_Driver_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
-git-tree-sha1 = "92cd84e2b760e471d647153ea5efc5789fc5e8b2"
+git-tree-sha1 = "af17d37b5b8b4d7525f8902eba1ef6141a9a7d3b"
 uuid = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
-version = "0.19.2+0"
+version = "0.21.0+0"
 
 [[deps.CUDNN_jll]]
 deps = ["Artifacts", "CUDA_Runtime_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
-git-tree-sha1 = "dff9a69017686c95f1fd601c63c088244b3db75b"
+git-tree-sha1 = "70dea6a7133d2100a143b515a00d6d887e208500"
 uuid = "62b44479-cb7b-5706-934f-f13b2eb2e645"
-version = "9.17.1+0"
+version = "9.20.0+0"
 
 [[deps.Cairo]]
 deps = ["Cairo_jll", "Colors", "Glib_jll", "Graphics", "Libdl", "Pango_jll"]
@@ -560,7 +560,7 @@ uuid = "411431e0-e8b7-467b-b5e0-f676ba4f2910"
 version = "0.1.6"
 
 [[deps.FFMPEG_jll]]
-deps = ["Artifacts", "Bzip2_jll", "FreeType2_jll", "FriBidi_jll", "JLLWrappers", "LAME_jll", "Libdl", "Ogg_jll", "OpenSSL_jll", "Opus_jll", "PCRE2_jll", "Zlib_jll", "libaom_jll", "libass_jll", "libfdk_aac_jll", "libvorbis_jll", "x264_jll", "x265_jll"]
+deps = ["Artifacts", "Bzip2_jll", "FreeType2_jll", "FriBidi_jll", "JLLWrappers", "LAME_jll", "Libdl", "Ogg_jll", "OpenSSL_jll", "Opus_jll", "PCRE2_jll", "Zlib_jll", "libaom_jll", "libass_jll", "libfdk_aac_jll", "libva_jll", "libvorbis_jll", "x264_jll", "x265_jll"]
 git-tree-sha1 = "01ba9d15e9eae375dc1eb9589df76b3572acd3f2"
 uuid = "b22a6f82-2f65-5046-a5b2-351ab43fb4e5"
 version = "8.0.1+0"
@@ -729,9 +729,9 @@ version = "1.11.0"
 
 [[deps.GPUArrays]]
 deps = ["Adapt", "GPUArraysCore", "KernelAbstractions", "LLVM", "LinearAlgebra", "Printf", "Random", "Reexport", "ScopedValues", "Serialization", "SparseArrays", "Statistics"]
-git-tree-sha1 = "cf610e3149d6bd9d3dfb63b218869394c3ee819f"
+git-tree-sha1 = "6487601563e4a1d1dab796e88b4548bf5544209e"
 uuid = "0c68f7d7-f131-5f86-a1c3-88cf8149b2d7"
-version = "11.4.0"
+version = "11.4.1"
 weakdeps = ["JLD2"]
 
     [deps.GPUArrays.extensions]
@@ -745,15 +745,15 @@ version = "0.2.0"
 
 [[deps.GPUCompiler]]
 deps = ["ExprTools", "InteractiveUtils", "LLVM", "Libdl", "Logging", "PrecompileTools", "Preferences", "Scratch", "Serialization", "TOML", "Tracy", "UUIDs"]
-git-tree-sha1 = "966946d226e8b676ca6409454718accb18c34c54"
+git-tree-sha1 = "fedfe5e7db7035271c3f58359007f971da1dde87"
 uuid = "61eb1bfa-7361-4325-ad38-22787b887f55"
-version = "1.8.2"
+version = "1.9.1"
 
 [[deps.GPUToolbox]]
 deps = ["LLVM"]
-git-tree-sha1 = "9e9186b09a13b7f094f87d1a9bb266d8780e1b1c"
+git-tree-sha1 = "a589b6c1a0eff953571f5d8b0474f5020831114d"
 uuid = "096a3bc2-3ced-46d0-87f4-dd12716f4bfc"
-version = "1.0.0"
+version = "1.1.1"
 
 [[deps.GeometryBasics]]
 deps = ["EarCut_jll", "Extents", "IterTools", "LinearAlgebra", "PrecompileTools", "Random", "StaticArrays"]
@@ -831,9 +831,9 @@ weakdeps = ["AbstractTrees"]
 
 [[deps.Hwloc_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "XML2_jll", "Xorg_libpciaccess_jll"]
-git-tree-sha1 = "3d468106a05408f9f7b6f161d9e7715159af247b"
+git-tree-sha1 = "baaaebd42ed9ee1bd9173cfd56910e55a8622ee1"
 uuid = "e33a78d0-f292-5ffc-b300-72abe9b543c8"
-version = "2.12.2+0"
+version = "2.13.0+1"
 
 [[deps.HypergeometricFunctions]]
 deps = ["LinearAlgebra", "OpenLibm_jll", "SpecialFunctions"]
@@ -1954,11 +1954,11 @@ version = "0.1.15"
 
 [[deps.Sprout]]
 deps = ["BenchmarkTools", "CSV", "CUDA", "CairoMakie", "ChainRulesCore", "DataFrames", "Dates", "Distributions", "Flux", "Hwloc", "JLD2", "MAGEMin_C", "ParameterSchedulers", "ProgressBars", "Random", "Reexport", "Statistics", "cuDNN"]
-git-tree-sha1 = "bfa7f506f4e36d32d47b2f7df4a6e45af0c34826"
+git-tree-sha1 = "19f636441525421f534e4680568c06ab0afba1c4"
 repo-rev = "main"
 repo-url = "https://github.com/Philipsite/Sprout.jl.git"
 uuid = "0e921d4c-edff-46ec-ae31-e277f0125084"
-version = "0.3.1"
+version = "0.3.2"
 
 [[deps.StableRNGs]]
 deps = ["Random"]
@@ -2257,6 +2257,12 @@ git-tree-sha1 = "a4c0ee07ad36bf8bbce1c3bb52d21fb1e0b987fb"
 uuid = "1082639a-0dae-5f34-9b06-72781eeb8cb3"
 version = "1.3.7+0"
 
+[[deps.Xorg_libXfixes_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libX11_jll"]
+git-tree-sha1 = "75e00946e43621e09d431d9b95818ee751e6b2ef"
+uuid = "d091e8ba-531a-589c-9de9-94069b037ed8"
+version = "6.0.2+0"
+
 [[deps.Xorg_libXrender_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libX11_jll"]
 git-tree-sha1 = "7ed9347888fac59a618302ee38216dd0379c480d"
@@ -2318,9 +2324,9 @@ version = "0.2.7"
 
 [[deps.cuDNN]]
 deps = ["CEnum", "CUDA", "CUDA_Runtime_Discovery", "CUDNN_jll"]
-git-tree-sha1 = "c1e756c5b075d06f19595ac0bc6388ab2973237a"
+git-tree-sha1 = "5494b0ae3ddc5ca0f64159d5ed3a396f36e0fcfe"
 uuid = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"
-version = "1.4.6"
+version = "1.4.7"
 
 [[deps.demumble_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -2351,6 +2357,12 @@ deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
 version = "5.15.0+0"
 
+[[deps.libdrm_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libpciaccess_jll"]
+git-tree-sha1 = "63aac0bcb0b582e11bad965cef4a689905456c03"
+uuid = "8e53e030-5e6c-5a89-a30b-be5b7263a166"
+version = "2.4.125+1"
+
 [[deps.libfdk_aac_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
 git-tree-sha1 = "646634dd19587a56ee2f1199563ec056c5f228df"
@@ -2368,6 +2380,12 @@ deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "Libdl", "libpng_jll"]
 git-tree-sha1 = "c1733e347283df07689d71d61e14be986e49e47a"
 uuid = "075b6546-f08a-558a-be8f-8157d0f608a5"
 version = "1.10.5+0"
+
+[[deps.libva_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libX11_jll", "Xorg_libXext_jll", "Xorg_libXfixes_jll", "libdrm_jll"]
+git-tree-sha1 = "7dbf96baae3310fe2fa0df0ccbb3c6288d5816c9"
+uuid = "9a156e7d-b971-5f62-b2c9-67348b8fb97c"
+version = "2.23.0+0"
 
 [[deps.libvorbis_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Ogg_jll"]
