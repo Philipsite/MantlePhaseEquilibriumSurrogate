@@ -95,6 +95,10 @@ function axis_with_heatmap(grid_pos, x, y, z; title, colorrange, xlabel=nothing,
     if !isnothing(ylabel)
         ax.ylabel = ylabel
     end
+
+    ax.xticks = ([500, 1000, 1500, 2000, 2500], ["500", "1000", "1500", "2000", "2500"])
+    ax.yticks = ([10, 100, 200, 300, 400], ["1", "10", "20", "30", "40"])
+
     return ax, hm
 end
 
