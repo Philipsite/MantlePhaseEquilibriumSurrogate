@@ -202,9 +202,23 @@ lines!(ax3, geotherm_T(geotherm_P, geotherms.warm_subduction), geotherm_P, color
 lines!(ax3, geotherm_T(geotherm_P, geotherms.mantle_adiabat), geotherm_P, color=:white, alpha=0.2, linewidth=20, label="Mantle adiabat")
 
 # add labels to geotherm lines
-text!(ax3, "1", position = (geotherm_T(11., geotherms.cold_subduction), 11.), align = (:center, :bottom), color=:white, fontsize=12)
-text!(ax3, "2", position = (geotherm_T(11., geotherms.warm_subduction), 11.), align = (:center, :bottom), color=:white, fontsize=12)
-text!(ax3, "3", position = (geotherm_T(11., geotherms.mantle_adiabat), 11.), align = (:center, :bottom), color=:white, fontsize=12)
+text!(ax3, "1", position = (geotherm_T(20., geotherms.cold_subduction), 20.), align = (:center, :bottom), color=:white, fontsize=12)
+text!(ax3, "2", position = (geotherm_T(20., geotherms.warm_subduction), 20.), align = (:center, :bottom), color=:white, fontsize=12)
+text!(ax3, "3", position = (geotherm_T(20., geotherms.mantle_adiabat), 20.), align = (:center, :bottom), color=:white, fontsize=12)
+
+# add reaction labels
+text!(ax1, "barometer", position = (2000, 270), color=:white, fontsize=12, font=:italic)
+text!(ax2, "thermometer", position = (1220, 340), color=:white, fontsize=12, font=:italic)
+
+# Add phase stability markers
+arrows2d!(ax6, [2120], [290], [-150], [-15], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax6, "gt out", position = (2150, 280), color = :white)
+arrows2d!(ax6, [1000], [310], [150], [0], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax6, "ak out", position = (680, 300), color = :white)
+arrows2d!(ax9, [1330], [300], [-100], [15], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax9, "nal out", position = (1350, 280), color = :white)
+
+arrows2d!(ax4, [1950], [70], [450], [12], color=:white, lengthscale=1.0, tipwidth=8, tiplength=16, shaftwidth=2.5)
 
 # Show labels only on outer axes for the 3x3 panel layout.
 axes = [ax1 ax2 ax3; ax4 ax5 ax6; ax7 ax8 ax9]
@@ -230,8 +244,8 @@ labels = ["(a)" "(b)" "(c)";
           "(d)" "(e)" "(f)";
           "(g)" "(h)" "(i)"]
 titles = [L"\text{\Vert \mathbf{J}_f v_P \Vert_2}" L"\text{\Vert \mathbf{J}_f \hat{e}_T \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{BAS-HRZ} \Vert_2}";
-          L"\text{\Vert \mathbf{J}_f v_{Si} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Ca} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Al} \Vert_2}";
-          L"\text{\Vert \mathbf{J}_f v_{Fe} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Mg} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Na} \Vert_2}"]
+          L"\text{\Vert \mathbf{J}_f v_{SiO_2} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{CaO} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Al_2O_3} \Vert_2}";
+          L"\text{\Vert \mathbf{J}_f v_{FeO} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{MgO} \Vert_2}" L"\text{\Vert \mathbf{J}_f v_{Na_2O} \Vert_2}"]
 for i in 1:3, j in 1:3
     ax = axes[i, j]
     label = labels[i, j]
@@ -240,8 +254,6 @@ for i in 1:3, j in 1:3
     text!(ax, label, position = label_offset, align = (:left, :top), color = :white, font = :bold, fontsize = label_fontsize)
     text!(ax, title, position = title_offset, align = (:right, :top), color = :white, fontsize = label_fontsize)
 end
-
-
 
 # Add colorbars
 Colorbar(fig[1, 4], hm1, height = Relative(1.0), ticks = ([0, 0.005, 0.025, 0.05, 0.1], ["0.0", "0.5", "2.5", "5.0", "10.0"]), label = L"\text{Sensitivity [10^{-2} a.u.]}")
