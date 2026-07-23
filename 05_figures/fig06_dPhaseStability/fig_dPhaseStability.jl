@@ -171,8 +171,13 @@ text!(ax1, "+wa", position = (1960, 155), color = :white)
 text!(ax2, "+ri", position = (1750, 200), color = :white)
 text!(ax3, "+pv", position = (2250, 240), color = :white)
 text!(ax4, "+gt", position = (2250, 235), color = :white)
-text!(ax5, "+ak", position = (920, 280), color = :white)
+text!(ax5, "+ak", position = (900, 320), color = :white)
 text!(ax6, "+nal", position = (900, 280), color = :white)
+
+arrows2d!(ax3, [1500], [275], [-75], [-30], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax3, "ak → pv", position = (1300, 280), color = :white)
+arrows2d!(ax5, [1500], [275], [-75], [-30], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax5, "ak → pv", position = (1300, 280), color = :white)
 
 # Show labels only on outer axes for the 2x3 panel layout.
 axes = [ax1 ax2 ax3; ax4 ax5 ax6]

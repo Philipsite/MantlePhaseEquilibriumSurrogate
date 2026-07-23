@@ -211,6 +211,8 @@ text!(ax1, "barometer", position = (2000, 270), color=:white, fontsize=12, font=
 text!(ax2, "thermometer", position = (1220, 340), color=:white, fontsize=12, font=:italic)
 
 # Add phase stability markers
+arrows2d!(ax4, [1900], [90], [150], [-15], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
+text!(ax4, "opx out", position = (1500, 95), color = :white)
 arrows2d!(ax6, [2120], [290], [-150], [-15], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
 text!(ax6, "gt out", position = (2150, 280), color = :white)
 arrows2d!(ax6, [1000], [310], [150], [0], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
@@ -218,7 +220,7 @@ text!(ax6, "ak out", position = (680, 300), color = :white)
 arrows2d!(ax9, [1330], [300], [-100], [15], color=:white, lengthscale=1.0, tipwidth=4, shaftwidth=1.5)
 text!(ax9, "nal out", position = (1350, 280), color = :white)
 
-arrows2d!(ax4, [1950], [70], [450], [12], color=:white, lengthscale=1.0, tipwidth=8, tiplength=16, shaftwidth=2.5)
+
 
 # Show labels only on outer axes for the 3x3 panel layout.
 axes = [ax1 ax2 ax3; ax4 ax5 ax6; ax7 ax8 ax9]
